@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveDeal - Buy & Sell Cars</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo">Drive<span>Deal</span></div>
+        <nav>
+            <a href="#browse">Buy Cars</a>
+            <button class="btn-sell" id="openModalBtn">Sell Your Car</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Find Your Next Dream Ride</h1>
+        <p>Discover thousands of trusted cars at unbeatable prices.</p>
+    </section>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Filter Sidebar & Car Grid Container -->
+        <div class="marketplace-container">
+            
+            <!-- Filters -->
+            <aside class="filters">
+                <h3>Filter Search</h3>
+                <div class="filter-group">
+                    <label>Brand</label>
+                    <select id="brandFilter">
+                        <option value="all">All Brands</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Mercedes">Mercedes</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Max Price ($)</label>
+                    <input type="number" id="priceFilter" placeholder="e.g. 20000">
+                </div>
+                <button class="btn-filter" id="applyFilters">Apply Filters</button>
+            </aside>
+
+            <!-- Car Listings Grid -->
+            <section class="car-listings">
+                <h2>Available Vehicles</h2>
+                <div class="grid" id="carGrid">
+                    <!-- JavaScript will inject cars here dynamically -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Sell Car Modal (Popup Form) -->
+    <div class="modal" id="sellModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>List Your Car for Sale</h2>
+            <form id="sellForm">
+                <input type="text" id="carTitle" placeholder="Car Title (e.g., 2020 Toyota Corolla)" required>
+                <input type="text" id="carBrand" placeholder="Brand (e.g., Toyota)" required>
+                <input type="number" id="carPrice" placeholder="Price ($)" required>
+                <input type="text" id="carImage" placeholder="Image URL (Use a web image link)" required>
+                <button type="submit" class="btn-submit">Submit Listing</button>
+            </form>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
